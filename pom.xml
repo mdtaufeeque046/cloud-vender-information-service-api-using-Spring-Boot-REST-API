@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.taufeeque</groupId>
-	<artifactId>cloud-vender-information-service-api</artifactId>
+	<artifactId>cloud-vender-service-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>cloud-vender-information-service-api</name>
+	<name>cloud-vendor-service-api</name>
 	<description>A Simple Spring Boot REST API application which will support CRUD operations</description>
 	<properties>
 		<java.version>17</java.version>

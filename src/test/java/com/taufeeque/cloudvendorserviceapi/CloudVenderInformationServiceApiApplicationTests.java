@@ -1,4 +1,4 @@
-package com.taufeeque.cloudvenderinformationserviceapi;
+package com.taufeeque.cloudvendorserviceapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
