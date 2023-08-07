@@ -1,5 +1,6 @@
 package com.taufeeque.cloudvendorserviceapi.repository;
 
+import com.taufeeque.cloudvendorserviceapi.exception.CloudVendorNotFoundException;
 import com.taufeeque.cloudvendorserviceapi.model.CloudVendor;
 import com.taufeeque.cloudvendorserviceapi.service.CloudVendorService;
 import org.springframework.stereotype.Service;
@@ -36,6 +37,9 @@ public class CloudVendorServiceImpl implements CloudVendorService {
 
     @Override
     public CloudVendor getCloudVendor(String cloudVendorId) {
+
+        if(cloudVendorRepository.findById(cloudVendorId).isEmpty())
+            throw new CloudVendorNotFoundException("Requested Cloud Vendor does not exist.");
         return cloudVendorRepository.findById(cloudVendorId).get();
     }
 
