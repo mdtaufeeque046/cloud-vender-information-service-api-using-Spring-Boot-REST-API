@@ -1,7 +1,8 @@
-package com.taufeeque.cloudvendorserviceapi.repository;
+package com.taufeeque.cloudvendorserviceapi.service;
 
 import com.taufeeque.cloudvendorserviceapi.exception.CloudVendorNotFoundException;
 import com.taufeeque.cloudvendorserviceapi.model.CloudVendor;
+import com.taufeeque.cloudvendorserviceapi.repository.CloudVendorRepository;
 import com.taufeeque.cloudvendorserviceapi.service.CloudVendorService;
 import org.springframework.stereotype.Service;
 

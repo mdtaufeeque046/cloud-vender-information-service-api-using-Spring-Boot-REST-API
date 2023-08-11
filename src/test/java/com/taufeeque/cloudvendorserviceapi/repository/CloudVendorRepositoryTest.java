@@ -41,4 +41,11 @@ public class CloudVendorRepositoryTest {
     }
 
     //Test case FAILURE
+    @Test
+    void testFindByVendorName_NotFound() {
+        List<CloudVendor> cloudVendorList = cloudVendorRepository.findByVendorName("GCP");
+        assertThat(cloudVendorList.isEmpty()).isTrue();
+
+    }
+
 }
