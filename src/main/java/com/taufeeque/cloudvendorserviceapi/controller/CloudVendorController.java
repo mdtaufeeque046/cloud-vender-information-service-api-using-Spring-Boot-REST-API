@@ -30,7 +30,7 @@ public class CloudVendorController {
 
     // Read All Cloud Vendor Details from the DB
     @GetMapping
-    public List<CloudVendor> getCloudVendorDetails() {
+    public List<CloudVendor> getAllCloudVendorDetails() {
         return cloudVendorService.getAllCloudVendors();
 
     }
