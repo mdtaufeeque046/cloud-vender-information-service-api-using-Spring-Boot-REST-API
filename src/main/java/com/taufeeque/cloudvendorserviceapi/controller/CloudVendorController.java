@@ -3,7 +3,12 @@ package com.taufeeque.cloudvendorserviceapi.controller;
 import com.taufeeque.cloudvendorserviceapi.model.CloudVendor;
 import com.taufeeque.cloudvendorserviceapi.response.ResponseHandler;
 import com.taufeeque.cloudvendorserviceapi.service.CloudVendorService;
-import org.aspectj.bridge.Message;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +17,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/cloudvendor")
+
+@SecurityRequirement(name = "bearerAuth")
+
+@Tag(name = "CV Controller")
 public class CloudVendorController {
 
     // Cloud Vendor Service instance
@@ -21,6 +30,24 @@ public class CloudVendorController {
         this.cloudVendorService = cloudVendorService;
     }
 
+
+    @Operation(
+            description = "Get endpoint for cloud vendor",
+            summary = "This is a summary for cloud vendor get endpoint",
+            responses = {
+                    @ApiResponse(
+                            description = "Success",
+                            responseCode = "200"
+                    ),
+
+                    @ApiResponse(
+                            description = "Unauthorized / Invalid ",
+                            responseCode = "403"
+                    )
+            }
+
+
+    )
     // Read Specific Cloud Vendor Details
     @GetMapping("{vendorId}")
     public ResponseEntity<Object> getCloudVendorDetails(@PathVariable("vendorId") String vendorId) {
